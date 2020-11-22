@@ -1,0 +1,5 @@
+.idea
+app/input
+data
+# Project exclude paths
+/venv/
