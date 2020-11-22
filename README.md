@@ -12,6 +12,5 @@ docker-compose up
 ```
 # консоль 2
 # рабочая директория <ПУТЬ ДО ПАПКИ>/cooking_server
-chmod -R 777 input
+chmod -R 777 data
 ```
-Теперь в эту папку можно закинуть файл __data.json__
