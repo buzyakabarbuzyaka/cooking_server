@@ -3,6 +3,6 @@ WORKDIR /
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY app .
+ADD app /app
 
 CMD python3 -m app.main

@@ -6,7 +6,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./data:/app/data
+      - ./data:/data
     networks:
       - stat_network
 
