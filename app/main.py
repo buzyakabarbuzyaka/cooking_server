@@ -4,9 +4,13 @@ from os.path import join, dirname
 from os import listdir
 from random import choices
 
+from app.index import index
+from app.find import find
+
 app = Flask(__name__)
 
-IMG_DIR = join(dirname(__file__), 'data', 'img')
+IMG_DIR = join(dirname(__file__), '..', 'data', 'img')
+index(IMG_DIR)
 
 
 @app.route('/', methods=['GET'])
