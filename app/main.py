@@ -4,8 +4,7 @@ from os.path import join, dirname
 from os import listdir
 from random import choices
 
-from app.index import index
-from app.find import find
+from app.index import index, find
 
 app = Flask(__name__)
 

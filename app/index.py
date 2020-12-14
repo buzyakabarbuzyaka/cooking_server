@@ -1,6 +1,10 @@
 import os
 import json
-from os.path import dirname, join
+from os.path import join
+import csv
+from typing import List
+
+FIND_ARR = []
 
 
 def index(path):
@@ -16,3 +20,17 @@ def index(path):
             tmp_string = f"{data_id};{title}\n"
 
             f.write(tmp_string)
+
+    with open("index.csv", encoding='utf-8') as csv_file:
+        reader = csv.DictReader(csv_file, delimiter=";")
+        for dict_line in reader:
+            FIND_ARR.append((dict_line['id'], dict_line['title'].lower()))
+
+
+def find(substr: str) -> List[str]:
+    substr = substr.lower()
+    id_arr = []
+    for data_id, title in FIND_ARR:
+        if substr in title:
+            id_arr.append(data_id)
+    return id_arr
