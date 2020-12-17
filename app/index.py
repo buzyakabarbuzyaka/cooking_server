@@ -13,13 +13,16 @@ def index(path):
         folder_list = os.listdir(path)
         for folder in folder_list:
             tmp_path = join(path, folder, 'data.json')
-            with open(tmp_path, 'r', encoding="utf-8") as file_data:
-                data = json.load(file_data)
-            data_id = data['id']
-            title = data['title']
-            tmp_string = f"{data_id};{title}\n"
+            try:
+                with open(tmp_path, 'r', encoding="utf-8") as file_data:
+                    data = json.load(file_data)
+                data_id = data['id']
+                title = data['title']
+                tmp_string = f"{data_id};{title}\n"
 
-            f.write(tmp_string)
+                f.write(tmp_string)
+            except Exception:
+                print(f"While processing {tmp_path} error occurred!")
 
     with open("index.csv", encoding='utf-8') as csv_file:
         reader = csv.DictReader(csv_file, delimiter=";")
