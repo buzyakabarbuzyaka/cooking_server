@@ -2,14 +2,7 @@ version: "3.7"
 services:
   cook-back-end:
     build: .
-    container_name: "cook_back_end"
     ports:
       - 5000:5000
     volumes:
       - ./data:/data
-    networks:
-      - stat_network
-
-networks:
-  stat_network:
-    name: stat_network
